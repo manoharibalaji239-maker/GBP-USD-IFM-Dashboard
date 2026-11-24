@@ -87,7 +87,13 @@ st.markdown(
 )
 
 # ----------------------------- Data ------------------------------------
-DATA_PATH = Path(__file__).parent / "data" / "GBP_USD_IFM_Dataset.csv"
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).parent
+ROOT_CSV = ROOT_DIR / "GBP_USD_IFM_Dataset.csv"
+DATA_FOLDER_CSV = ROOT_DIR / "data" / "GBP_USD_IFM_Dataset.csv"
+
+DATA_PATH = ROOT_CSV if ROOT_CSV.exists() else DATA_FOLDER_CSV
 
 @st.cache_data
 def load_data(path):
