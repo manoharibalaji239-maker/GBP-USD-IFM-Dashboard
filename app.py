@@ -38,7 +38,7 @@ st.markdown(
 )
 
 # ----------------------------- Data ------------------------------------
-DATA_PATH = Path(__file__).parent / "data" / "GBP_USD_IFM_Dataset.csv"
+DATA_PATH = Path(__file__).parent / "GBP_USD_IFM_Dataset.csv"
 
 @st.cache_data
 def load_data(path):
